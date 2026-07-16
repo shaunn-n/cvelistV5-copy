@@ -1,0 +1,9 @@
+﻿cves/2021/47xxx/CVE-2021-47349.json
+cves/2023/53xxx/CVE-2023-53142.json
+cves/2024/47xxx/CVE-2024-47336.json
+cves/2025/62xxx/CVE-2025-62139.json
+cves/2026/24xxx/CVE-2026-24621.json
+cves/2026/42xxx/CVE-2026-42778.json
+cves/2026/42xxx/CVE-2026-42779.json
+
+File Created Using Copilot Agent 7-16-2026

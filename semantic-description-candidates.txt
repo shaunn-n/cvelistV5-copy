@@ -1,0 +1,26 @@
+﻿cves/2021/47xxx/CVE-2021-47349.json
+cves/2022/49xxx/CVE-2022-49374.json
+cves/2023/22xxx/CVE-2023-22602.json
+cves/2023/46xxx/CVE-2023-46254.json
+cves/2023/53xxx/CVE-2023-53077.json
+cves/2023/53xxx/CVE-2023-53142.json
+cves/2024/47xxx/CVE-2024-47336.json
+cves/2024/49xxx/CVE-2024-49900.json
+cves/2025/11xxx/CVE-2025-11393.json
+cves/2025/21xxx/CVE-2025-21932.json
+cves/2025/29xxx/CVE-2025-29780.json
+cves/2025/37xxx/CVE-2025-37742.json
+cves/2025/38xxx/CVE-2025-38193.json
+cves/2025/62xxx/CVE-2025-62139.json
+cves/2025/71xxx/CVE-2025-71304.json
+cves/2026/22xxx/CVE-2026-22774.json
+cves/2026/22xxx/CVE-2026-22775.json
+cves/2026/24xxx/CVE-2026-24621.json
+cves/2026/31xxx/CVE-2026-31786.json
+cves/2026/42xxx/CVE-2026-42252.json
+cves/2026/42xxx/CVE-2026-42570.json
+cves/2026/42xxx/CVE-2026-42778.json
+cves/2026/42xxx/CVE-2026-42779.json
+cves/2026/50xxx/CVE-2026-50196.json
+
+File Created Using Copilot Agent 7-16-2026
