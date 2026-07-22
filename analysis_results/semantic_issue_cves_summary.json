@@ -1,0 +1,27 @@
+{
+  "definition": "CVEs involving incorrect interpretation or enforcement of identity, authority, state, trust, origin, protocol meaning, or certificate validity.",
+  "input_candidates": 107278,
+  "semantic_issue_cves": 95940,
+  "counts": {
+    "CWE-266": 1004,
+    "CWE-269": 1872,
+    "CWE-285": 1469,
+    "CWE-287": 1976,
+    "CWE-306": 1797,
+    "CWE-345": 400,
+    "CWE-346": 426,
+    "CWE-436": 83,
+    "CWE-444": 251,
+    "CWE-610": 87,
+    "CWE-639": 1754,
+    "CWE-642": 17,
+    "CWE-841": 54,
+    "CWE-863": 2276,
+    "business_logic": 825,
+    "certificate_validation_error": 1060,
+    "high": 15006,
+    "medium": 80934,
+    "state_machine_error": 103,
+    "trust_boundary_error": 463
+  }
+}
