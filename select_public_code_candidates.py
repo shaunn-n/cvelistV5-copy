@@ -51,25 +51,41 @@ def main():
                 if cwes & rule["cwes"] or signals & rule["signals"]:
                     pools[name].append(row)
 
-    selected, used = [], set()
+    selected = []
     for name, candidates in pools.items():
-        count = 0
+        category_selected, seen = [], set()
+        # First reserve one record from each requested year.
+        for year in range(2023, 2027):
+            for row in candidates:
+                if row["cve_id"] in seen or not row["cve_id"].startswith(f"CVE-{year}-"):
+                    continue
+                refs = refs_for(row["path"])
+                if refs:
+                    row = dict(row)
+                    row["semantic_category"] = name
+                    row["cve_year"] = year
+                    row["public_code_reference"] = refs[0]
+                    category_selected.append(row)
+                    seen.add(row["cve_id"])
+                    break
+        # Add one further distinct record with a public commit/PR reference.
         for row in candidates:
-            if row["cve_id"] in used:
+            if len(category_selected) == 5:
+                break
+            if row["cve_id"] in seen:
                 continue
             refs = refs_for(row["path"])
-            if not refs:
-                continue
-            row["semantic_category"] = name
-            row["public_code_reference"] = refs[0]
-            selected.append(row)
-            used.add(row["cve_id"])
-            count += 1
-            if count == 5:
-                break
-        print(f"{name}: {count}")
+            if refs:
+                row = dict(row)
+                row["semantic_category"] = name
+                row["cve_year"] = int(row["cve_id"].split("-")[1])
+                row["public_code_reference"] = refs[0]
+                category_selected.append(row)
+                seen.add(row["cve_id"])
+        selected.extend(category_selected)
+        print(f"{name}: {len(category_selected)} (years: {sorted({row['cve_year'] for row in category_selected})})")
 
-    fields = ["semantic_category", "cve_id", "matched_cwes", "matched_categories", "title", "description", "public_code_reference", "path"]
+    fields = ["semantic_category", "cve_year", "cve_id", "matched_cwes", "matched_categories", "title", "description", "public_code_reference", "path"]
     with OUT.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore")
         writer.writeheader()
